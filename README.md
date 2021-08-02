@@ -29,30 +29,53 @@ The Proof of Authority (PoA) algorithm is typically used for private blockchain 
 
 - Then we complete the rest of the prompts, and when we are back at the main menu, we choose the "Manage existing genesis" option.
 
-- Now we export genesis configurations. This will fail to create two of the files, but you only need networkname.json.
+- Now we export genesis configurations. This will fail to create two of the files, but we only need simnet.json.
+
+<img width="1045" alt="sc5" src="https://user-images.githubusercontent.com/78338890/127789849-e9e594a2-0b31-4469-9493-efee937307bb.png">
 
 
+- With the genesis block creation completed, we will now initialize the nodes with the genesis' json file.
 
-
-With the genesis block creation completed, we will now initialize the nodes with the genesis' json file.
-
-Using geth, initialize each node with the new simnet.json.
+- Using geth, we initialize each node with the new simnet.json.
 
 ./geth --datadir node1 init simnet.json
 ./geth --datadir node2 init simnet.json
 
+<img width="1439" alt="sc3" src="https://user-images.githubusercontent.com/78338890/127789777-491c1545-51a0-4c41-9e8b-92a4e672e40f.png">
 
-Now the nodes can be used to begin mining blocks.
+- Now the nodes can be used to begin mining blocks.
 
-Run the nodes in separate terminal windows with the commands:
+- Run the nodes in separate terminal windows with the commands:
 
 ./geth --datadir node1 --unlock "0xd5b9fa27550306b8a662Eb89a98020A3cCecDc46" --mine --rpc --allow-insecure-unlock
 ./geth --datadir node2 --port 30304 --bootnodes "enode://22ff1742d774b7d29d1215c25b7e39469a9ac923ee95e1e63fb2ddf0c13e7267df4933aa9692fde3ee2805078b64408ce1fcf1e1022ddda5e87b930a4dce6063@127.0.0.1:30303"
 
+<img width="1440" alt="sc4" src="https://user-images.githubusercontent.com/78338890/127789803-128265b0-05e6-44e3-9f2c-3f2edce4b651.png">
 
-Your private PoA blockchain should now be running!
+<img width="1424" alt="sc12" src="https://user-images.githubusercontent.com/78338890/127789871-0bd4c4f8-f521-48a2-9e5b-68bb3bd4502c.png">
+
+- Our private PoA blockchain is now running!
+
+- With both nodes up and running, we will add the blockchain  to MyCrypto for testing.
+
+- So we open the MyCrypto app, then click Change Network at the bottom left and click "Add Custom Node", then add the custom network information that we have set in the genesis.
+      - Type ETH in the Currency box
+      - In the Chain ID box, we type the chain id we generated - 999
+      - In the URL box type: http://127.0.0.1:8545.  This points to the default RPC port on our local machine.
+      - Then we finally, click Save & Use Custom Node.
+
+<img width="1389" alt="sc6" src="https://user-images.githubusercontent.com/78338890/127790367-1c4f5f3e-ce98-4727-b92d-4fb6318851e2.png">
+
+- After connecting to the custom network in MyCrypto, we test by sending money between accounts.
+ 
+ - So we select the View & Send option from the left menu pane, then click Keystore file. On the next screen, we click Select Wallet File, then navigate to the keystore directory inside our Node1 directory, select the file located there, provide our password when prompted and then click Unlock and this will open our account wallet inside MyCrypto.
+
+<img width="1360" alt="sc7" src="https://user-images.githubusercontent.com/78338890/127790508-8217db09-1073-47ce-9ed1-f1d488633745.png">
 
 
-With both nodes up and running, the blockchain can be added to MyCrypto for testing.
+We're filthy rich! :)
+This is the balance that was pre-funded for this account in the genesis configuration; however, these millions of ETH tokens are just for our testing purposes.
 
-Open the MyCrypto app, then click Change Network at the bottom left:
+-Now in the To Address box, we type the account address from Node2, then fill in the amount of 250 ETH:
+<img width="1367" alt="sc8" src="https://user-images.githubusercontent.com/78338890/127790624-ac8206e3-a756-4d4a-bbb2-18e6d8fb4196.png">
+
