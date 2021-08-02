@@ -79,3 +79,15 @@ This is the balance that was pre-funded for this account in the genesis configur
 -Now in the To Address box, we type the account address from Node2, then fill in the amount of 250 ETH:
 <img width="1367" alt="sc8" src="https://user-images.githubusercontent.com/78338890/127790624-ac8206e3-a756-4d4a-bbb2-18e6d8fb4196.png">
 
+- Now we confirm the transaction by clicking "Send Transaction", and the "Send" button in the pop-up window:
+<img width="1266" alt="sc9" src="https://user-images.githubusercontent.com/78338890/127790669-4154d551-9890-4688-b17a-dedea894ad16.png">
+
+- We then click the Check TX Status when the green message pops up and confirm the logout.
+<img width="1340" alt="sc10" src="https://user-images.githubusercontent.com/78338890/127790722-1837b669-736d-4a5d-9403-c80693fb019e.png">
+
+Now we can click the Check TX Status button to update the status. And it may take some time to go from. pending to successful.
+
+<img width="1353" alt="sc11" src="https://user-images.githubusercontent.com/78338890/127790768-55c1a232-27ea-44dd-bedc-3508116c9ea6.png">
+
+
+
